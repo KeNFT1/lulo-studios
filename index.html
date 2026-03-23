@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lulo Studios - Building at the Intersection of AI, Healthcare & Web3</title>
+    <meta name="description" content="Creative tech studio building useful things with ape IP. AI, healthcare, web3.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0f0f0f;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 15px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #7C3AED;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #e5e5e5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #7C3AED;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .ape-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            margin: 0 auto 40px;
+            display: block;
+            border: 3px solid #7C3AED;
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #7C3AED, #A855F7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .tagline {
+            font-size: 1.5rem;
+            color: #a1a1aa;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #7C3AED, #A855F7);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: #7C3AED;
+        }
+
+        /* About */
+        .about-content {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #d4d4d8;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #7C3AED;
+        }
+
+        .project-card h3 {
+            color: #7C3AED;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: #a1a1aa;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #7C3AED;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Builder */
+        .builder-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .builder-image {
+            text-align: center;
+            font-size: 8rem;
+        }
+
+        .builder-bio {
+            font-size: 1.1rem;
+            color: #d4d4d8;
+        }
+
+        .builder-bio h3 {
+            color: #7C3AED;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .highlight {
+            color: #7C3AED;
+            font-weight: bold;
+        }
+
+        /* Connect */
+        .connect-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .connect-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 25px;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 10px;
+            color: #e5e5e5;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .connect-link:hover {
+            border-color: #7C3AED;
+            background: rgba(124, 58, 237, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .builder-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .connect-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Lulo Studios</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#builder">Builder</a></li>
+                <li><a href="#connect">Connect</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <img src="https://i2c.seadn.io/base/0x7e72abdf47bd21bf0ed6ea8cb8dad60579f3fb50/15a6a479d27af55a24429efacb4050/8f15a6a479d27af55a24429efacb4050.png" 
+                 alt="Lulo - BAYC #2253" class="ape-image">
+            <h1>Lulo Studios</h1>
+            <p class="tagline">Building at the intersection of AI, healthcare, and web3.<br>Useful things. Ape IP. No bullshit.</p>
+            <a href="#projects" class="cta-button">See What We Build</a>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+            <p>Lulo Studios is where <span class="highlight">BAYC #2253</span> meets cutting-edge technology. We build useful applications at the intersection of artificial intelligence, healthcare innovation, and web3 infrastructure.</p>
+            <br>
+            <p>No hype. No empty promises. Just real tools that solve real problems, backed by an ape who chain-smokes cigarettes and ships production code.</p>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Lulo's Eye</h3>
+                <p>Intelligence platform for data analysis and insights</p>
+                <a href="https://github.com/KeNFT1" class="project-link">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>Lulo's Org Charts</h3>
+                <p>Organizational visualization and management tools</p>
+                <a href="https://github.com/KeNFT1" class="project-link">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>Prediction Markets</h3>
+                <p>Decentralized prediction and forecasting platform</p>
+                <a href="https://github.com/KeNFT1" class="project-link">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>MedGemma Viewer</h3>
+                <p>Healthcare AI model visualization and analysis</p>
+                <a href="https://github.com/KeNFT1" class="project-link">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>PDF2ePub</h3>
+                <p>Document conversion and formatting tools</p>
+                <a href="https://github.com/KeNFT1" class="project-link">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>Vendedor</h3>
+                <p>E-commerce and marketplace solutions</p>
+                <a href="https://github.com/KeNFT1" class="project-link">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>WordSprout</h3>
+                <p>Kids' educational app (with Holly)</p>
+                <a href="https://github.com/KeNFT1" class="project-link">View on GitHub →</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="builder" class="container">
+        <h2 class="section-title">Builder</h2>
+        <div class="builder-content">
+            <div class="builder-image">🇨🇴</div>
+            <div class="builder-bio">
+                <h3>Ken - lulo.eth</h3>
+                <p>Behind the ape is a <span class="highlight">Colombian-American builder</span> who's spoken at TEDx, holds patents, competed in World Cup fencing, and currently leads healthcare AI products at GSK.</p>
+                <br>
+                <p>From the fencing strip to the blockchain, Ken builds systems that work. Whether it's training AI models for drug discovery or creating web3 tools for the next generation, the approach is the same: <span class="highlight">ship useful things</span>.</p>
+                <br>
+                <p>Lulo doesn't just hold the IP — Lulo <em>uses</em> it.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="connect" class="container">
+        <h2 class="section-title">Connect</h2>
+        <div class="connect-links">
+            <a href="https://x.com/lulodoteth" class="connect-link" target="_blank">
+                <span>𝕏</span> @lulodoteth
+            </a>
+            <a href="https://github.com/KeNFT1" class="connect-link" target="_blank">
+                <span>⚡</span> GitHub/KeNFT1
+            </a>
+            <a href="https://app.ens.domains/lulo.eth" class="connect-link" target="_blank">
+                <span>⟠</span> lulo.eth
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lulo Studios. Built by an ape who codes.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ape image hover effect
+            const apeImage = document.querySelector('.ape-image');
+            apeImage.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05) rotate(2deg)';
+            });
+            apeImage.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+    </script>
+</body>
+</html>
