@@ -7,7 +7,7 @@
 
 Lulo Studios is a creative tech studio built around **BAYC #2253 "Lulo"** — an ape with gray fur, Irish Boho hat, scumbag eyes, bored cigarette, bone tee, and purple background. We build practical applications that solve real problems using artificial intelligence, healthcare innovation, and web3 infrastructure.
 
-Behind the ape is [Ken](https://github.com/KeNFT1) — a Colombian-American builder, TEDx speaker, patent holder, World Cup fencer, and healthcare AI product leader at GSK.
+Behind the ape is [Ken](https://github.com/KeNFT1) — a Colombian-American builder, TEDx speaker, patent holder, World Cup fencer, and healthcare AI product leader.
 
 🌐 **Visit:** [lulo.studio](https://lulo.studio)
 
