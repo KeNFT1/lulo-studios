@@ -19,7 +19,10 @@ Intelligence platform for data analysis and insights
 ### 📊 [Lulo's Org Charts](https://github.com/KeNFT1)
 Organizational visualization and management tools
 
-### 🎯 [Prediction Markets](https://github.com/KeNFT1)
+### 🦍 [Simian](https://github.com/KeNFT1/Simian)
+AI trading agents with NFT identity — verified via delegate.cash
+
+### 🎯 [Prediction Markets](https://github.com/KeNFT1/prediction-markets)
 Decentralized prediction and forecasting platform
 
 ### 🏥 [MedGemma Viewer](https://github.com/KeNFT1)
