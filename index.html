@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lulo Studios - Building at the Intersection of AI, Healthcare & Web3</title>
     <meta name="description" content="Creative tech studio building useful things with ape IP. AI, healthcare, web3.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,17 +15,29 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: #0f0f0f;
-            color: #e5e5e5;
-            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a0f;
+            color: #e4e4e7;
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.03em;
+            line-height: 1;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 2rem;
         }
 
         /* Header */
@@ -30,10 +45,13 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(15, 15, 15, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
             z-index: 100;
-            padding: 15px 0;
+            padding: 1rem 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         nav {
@@ -43,229 +61,440 @@
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
             color: #7C3AED;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 2rem;
         }
 
         nav a {
-            color: #e5e5e5;
+            color: #a1a1aa;
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
         }
 
         nav a:hover {
             color: #7C3AED;
         }
 
-        /* Hero Section */
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #7C3AED;
+            transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section - Split Screen */
         .hero {
-            min-height: 100vh;
-            display: flex;
+            min-height: 100dvh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 80px;
+            gap: 4rem;
+            padding: 6rem 0 2rem;
         }
 
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .ape-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 20px;
-            margin: 0 auto 40px;
-            display: block;
-            border: 3px solid #7C3AED;
-            box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+        .hero-left {
+            padding-left: 2rem;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: bold;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #7C3AED, #A855F7);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: #f4f4f5;
         }
 
-        .tagline {
-            font-size: 1.5rem;
+        .hero .tagline {
+            font-size: 1.25rem;
             color: #a1a1aa;
-            margin-bottom: 40px;
+            margin-bottom: 2.5rem;
+            max-width: 65ch;
             font-weight: 300;
         }
 
         .cta-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background: linear-gradient(135deg, #7C3AED, #A855F7);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: #7C3AED;
             color: white;
             text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 
+                0 4px 20px rgba(124, 58, 237, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 
+                0 8px 30px rgba(124, 58, 237, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+        }
+
+        .hero-right {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ape-container {
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .ape-image {
+            width: 320px;
+            height: 320px;
+            border-radius: 24px;
+            border: 2px solid rgba(124, 58, 237, 0.3);
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                0 8px 30px rgba(124, 58, 237, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .ape-image:hover {
+            transform: scale(1.02);
+            border-color: #7C3AED;
+            box-shadow: 
+                0 30px 80px rgba(0, 0, 0, 0.6),
+                0 12px 40px rgba(124, 58, 237, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         /* Sections */
         section {
-            padding: 80px 0;
+            padding: 5rem 0;
         }
 
         .section-title {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 50px;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
             color: #7C3AED;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         /* About */
+        .about {
+            background: linear-gradient(135deg, rgba(10, 10, 15, 0.8), rgba(30, 30, 40, 0.3));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 32px;
+            padding: 4rem;
+            margin: 2rem 0;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
         .about-content {
-            text-align: center;
-            font-size: 1.2rem;
-            max-width: 700px;
+            font-size: 1.25rem;
+            max-width: 65ch;
             margin: 0 auto;
+            text-align: center;
             color: #d4d4d8;
         }
 
-        /* Projects */
+        .about-content .highlight {
+            color: #7C3AED;
+            font-weight: 600;
+        }
+
+        /* Projects - Bento Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .project-card {
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 15px;
-            padding: 30px;
-            transition: transform 0.3s, border-color 0.3s;
+            background: rgba(10, 10, 15, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            border-color: #7C3AED;
+            transform: translateY(-4px);
+            border-color: rgba(124, 58, 237, 0.3);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        }
+
+        /* Bento Layout */
+        .project-card:nth-child(1) { /* Simian - Featured */
+            grid-column: span 6;
+            grid-row: span 2;
+            animation-delay: 0.1s;
+        }
+
+        .project-card:nth-child(2) { /* Prediction Markets */
+            grid-column: span 6;
+            animation-delay: 0.2s;
+        }
+
+        .project-card:nth-child(3) { /* MedGemma */
+            grid-column: span 6;
+            animation-delay: 0.3s;
+        }
+
+        .project-card:nth-child(4) { /* Lulo's Eye */
+            grid-column: span 4;
+            animation-delay: 0.4s;
+        }
+
+        .project-card:nth-child(5) { /* Org Charts */
+            grid-column: span 4;
+            animation-delay: 0.5s;
+        }
+
+        .project-card:nth-child(6) { /* PDF2ePub */
+            grid-column: span 4;
+            animation-delay: 0.6s;
+        }
+
+        .project-card:nth-child(7) { /* Vendedor */
+            grid-column: span 6;
+            animation-delay: 0.7s;
+        }
+
+        .project-card:nth-child(8) { /* WordSprout */
+            grid-column: span 6;
+            animation-delay: 0.8s;
         }
 
         .project-card h3 {
             color: #7C3AED;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
         .project-card p {
             color: #a1a1aa;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .project-link {
             color: #7C3AED;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            border-bottom: 1px solid transparent;
         }
 
         .project-link:hover {
-            text-decoration: underline;
+            border-bottom-color: #7C3AED;
         }
 
         /* Builder */
+        .builder {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.05), rgba(10, 10, 15, 0.8));
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(124, 58, 237, 0.1);
+            border-radius: 32px;
+            padding: 4rem;
+            margin: 2rem 0;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
         .builder-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 50px;
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
             align-items: center;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .builder-image {
-            text-align: center;
-            font-size: 8rem;
-        }
-
-        .builder-bio {
-            font-size: 1.1rem;
-            color: #d4d4d8;
+        .builder-flags {
+            font-size: 4rem;
+            line-height: 1;
         }
 
         .builder-bio h3 {
             color: #7C3AED;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
         }
 
-        .highlight {
+        .builder-bio p {
+            font-size: 1.1rem;
+            color: #d4d4d8;
+            margin-bottom: 1.5rem;
+            max-width: 65ch;
+        }
+
+        .builder-bio .highlight {
             color: #7C3AED;
-            font-weight: bold;
+            font-weight: 600;
         }
 
         /* Connect */
         .connect-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 2rem;
             flex-wrap: wrap;
+            margin-top: 3rem;
         }
 
         .connect-link {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 15px 25px;
-            background: #1a1a1a;
-            border: 1px solid #2a2a2a;
-            border-radius: 10px;
-            color: #e5e5e5;
+            gap: 0.75rem;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 15, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            color: #e4e4e7;
             text-decoration: none;
-            transition: all 0.3s;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
         }
 
         .connect-link:hover {
-            border-color: #7C3AED;
+            border-color: rgba(124, 58, 237, 0.3);
             background: rgba(124, 58, 237, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .connect-link:active {
+            transform: scale(0.98);
         }
 
         /* Footer */
         footer {
-            background: #1a1a1a;
-            padding: 40px 0;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 0;
             text-align: center;
-            border-top: 1px solid #2a2a2a;
+            color: #71717a;
+        }
+
+        .ape-badge {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin: 0 auto 1rem;
+            border: 1px solid rgba(124, 58, 237, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
             }
 
-            .tagline {
-                font-size: 1.2rem;
+            .hero-left {
+                padding-left: 0;
+                order: 2;
+            }
+
+            .hero-right {
+                order: 1;
+            }
+
+            .ape-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .project-card {
+                grid-column: span 6 !important;
+                grid-row: span 1 !important;
+            }
+
+            .builder-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
             }
 
             nav ul {
                 display: none;
             }
 
-            .builder-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .hero {
+                padding: 4rem 0 1rem;
+            }
+
+            .about, .builder {
+                padding: 2rem;
+                margin: 1rem 0;
             }
 
             .connect-links {
@@ -275,7 +504,20 @@
 
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
+        }
+
+        /* Scroll reveal animation trigger */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -292,88 +534,97 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <img src="https://i2c.seadn.io/base/0x7e72abdf47bd21bf0ed6ea8cb8dad60579f3fb50/15a6a479d27af55a24429efacb4050/8f15a6a479d27af55a24429efacb4050.png" 
-                 alt="Lulo - BAYC #2253" class="ape-image">
+    <section class="hero container">
+        <div class="hero-left">
             <h1>Lulo Studios</h1>
-            <p class="tagline">Building at the intersection of AI, healthcare, and web3.<br>Useful things. Ape IP. No bullshit.</p>
-            <a href="#projects" class="cta-button">See What We Build</a>
+            <p class="tagline">Building at the intersection of AI, healthcare, and web3. Useful things. Ape IP. No bullshit.</p>
+            <a href="#projects" class="cta-button">
+                See What We Build
+                <span>→</span>
+            </a>
+        </div>
+        <div class="hero-right">
+            <div class="ape-container">
+                <img src="https://i2c.seadn.io/base/0x7e72abdf47bd21bf0ed6ea8cb8dad60579f3fb50/15a6a479d27af55a24429efacb4050/8f15a6a479d27af55a24429efacb4050.png" 
+                     alt="Lulo - BAYC #2253" class="ape-image">
+            </div>
         </div>
     </section>
 
     <section id="about" class="container">
-        <h2 class="section-title">About</h2>
-        <div class="about-content">
-            <p>Lulo Studios is where <span class="highlight">BAYC #2253</span> meets cutting-edge technology. We build useful applications at the intersection of artificial intelligence, healthcare innovation, and web3 infrastructure.</p>
-            <br>
-            <p>No hype. No empty promises. Just real tools that solve real problems, backed by an ape who chain-smokes cigarettes and ships production code.</p>
+        <div class="about reveal">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <p>Lulo Studios is where <span class="highlight">BAYC #2253</span> meets cutting-edge technology. We build useful applications at the intersection of artificial intelligence, healthcare innovation, and web3 infrastructure.</p>
+                <br>
+                <p>No hype. No empty promises. Just real tools that solve real problems, backed by an ape who codes.</p>
+            </div>
         </div>
     </section>
 
     <section id="projects" class="container">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title reveal">Projects</h2>
         <div class="projects-grid">
+            <div class="project-card">
+                <h3>Simian</h3>
+                <p>AI trading agents with NFT identity — delegate.cash verified. The future of autonomous trading, backed by BAYC provenance.</p>
+                <a href="https://github.com/KeNFT1/Simian" class="project-link" target="_blank">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>Prediction Markets</h3>
+                <p>AI-powered prediction market trading infrastructure for real-time market intelligence.</p>
+                <a href="https://github.com/KeNFT1/prediction-markets" class="project-link" target="_blank">View on GitHub →</a>
+            </div>
+            <div class="project-card">
+                <h3>MedGemma Viewer</h3>
+                <p>Local-first medical image analysis with AI. Privacy-first healthcare innovation.</p>
+                <a href="https://github.com/KeNFT1/medgemma-viewer" class="project-link" target="_blank">View on GitHub →</a>
+            </div>
             <div class="project-card">
                 <h3>Lulo's Eye</h3>
                 <p>Real-time global intelligence platform</p>
-                <a href="https://github.com/KeNFT1/lulo-s-eye" class="project-link">View on GitHub →</a>
+                <a href="https://github.com/KeNFT1/lulo-s-eye" class="project-link" target="_blank">View on GitHub →</a>
             </div>
             <div class="project-card">
                 <h3>Lulo's Org Charts</h3>
                 <p>Organizational visualization and management tools</p>
-                <a href="https://github.com/KeNFT1/Lulo-s-org-charts" class="project-link">View on GitHub →</a>
-            </div>
-            <div class="project-card">
-                <h3>Prediction Markets</h3>
-                <p>AI-powered prediction market trading infrastructure</p>
-                <a href="https://github.com/KeNFT1/prediction-markets" class="project-link">View on GitHub →</a>
-            </div>
-            <div class="project-card">
-                <h3>MedGemma Viewer</h3>
-                <p>Local-first medical image analysis with AI</p>
-                <a href="https://github.com/KeNFT1/medgemma-viewer" class="project-link">View on GitHub →</a>
+                <a href="https://github.com/KeNFT1/Lulo-s-org-charts" class="project-link" target="_blank">View on GitHub →</a>
             </div>
             <div class="project-card">
                 <h3>PDF2ePub</h3>
                 <p>PDF to ePub converter preserving formatting and links</p>
-                <a href="https://github.com/KeNFT1/Pdf2epub" class="project-link">View on GitHub →</a>
-            </div>
-            <div class="project-card">
-                <h3>Simian</h3>
-                <p>AI trading agents with NFT identity — delegate.cash verified</p>
-                <a href="https://github.com/KeNFT1/Simian" class="project-link">View on GitHub →</a>
+                <a href="https://github.com/KeNFT1/Pdf2epub" class="project-link" target="_blank">View on GitHub →</a>
             </div>
             <div class="project-card">
                 <h3>Vendedor</h3>
-                <p>Android selling tool</p>
-                <a href="https://github.com/KeNFT1/vendedor" class="project-link">View on GitHub →</a>
+                <p>Android selling tool for marketplace optimization</p>
+                <a href="https://github.com/KeNFT1/vendedor" class="project-link" target="_blank">View on GitHub →</a>
             </div>
             <div class="project-card">
                 <h3>WordSprout</h3>
                 <p>Bilingual vocabulary tracking app for toddlers</p>
-                <a href="https://github.com/KeNFT1/WordSprout" class="project-link">View on GitHub →</a>
+                <a href="https://github.com/KeNFT1/WordSprout" class="project-link" target="_blank">View on GitHub →</a>
             </div>
         </div>
     </section>
 
     <section id="builder" class="container">
-        <h2 class="section-title">Builder</h2>
-        <div class="builder-content">
-            <div class="builder-image">🇺🇸🇨🇴</div>
-            <div class="builder-bio">
-                <h3>Ken - lulo.eth</h3>
-                <p>Behind the ape is a <span class="highlight">Colombian-American builder</span> who's spoken at TEDx, holds patents, competed in World Cup fencing, and builds healthcare AI products.</p>
-                <br>
-                <p>From the fencing strip to the blockchain, Ken builds systems that work. Whether it's training AI models for drug discovery or creating web3 tools for the next generation, the approach is the same: <span class="highlight">ship useful things</span>.</p>
-                <br>
-                <p>Lulo doesn't just hold the IP — Lulo <em>uses</em> it.</p>
+        <div class="builder reveal">
+            <h2 class="section-title">Builder</h2>
+            <div class="builder-content">
+                <div class="builder-flags">🇺🇸🇨🇴</div>
+                <div class="builder-bio">
+                    <h3>Ken - lulo.eth</h3>
+                    <p>Behind the ape is a <span class="highlight">Colombian-American builder</span> who's spoken at TEDx, holds patents, competed in World Cup fencing, and builds healthcare AI products.</p>
+                    <p>From the fencing strip to the blockchain, Ken builds systems that work. Whether it's training AI models for drug discovery or creating web3 tools for the next generation, the approach is the same: <span class="highlight">ship useful things</span>.</p>
+                    <p>Lulo doesn't just hold the IP — Lulo <em>uses</em> it.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="connect" class="container">
-        <h2 class="section-title">Connect</h2>
+        <h2 class="section-title reveal">Connect</h2>
         <div class="connect-links">
             <a href="https://x.com/lulodoteth" class="connect-link" target="_blank">
                 <span>𝕏</span> @lulodoteth
@@ -381,14 +632,13 @@
             <a href="https://github.com/KeNFT1" class="connect-link" target="_blank">
                 <span>⚡</span> GitHub/KeNFT1
             </a>
-            <a href="https://app.ens.domains/lulo.eth" class="connect-link" target="_blank">
-                <span>⟠</span> lulo.eth
-            </a>
         </div>
     </section>
 
     <footer>
         <div class="container">
+            <img src="https://i2c.seadn.io/base/0x7e72abdf47bd21bf0ed6ea8cb8dad60579f3fb50/15a6a479d27af55a24429efacb4050/8f15a6a479d27af55a24429efacb4050.png" 
+                 alt="Lulo Badge" class="ape-badge">
             <p>&copy; 2026 Lulo Studios. Built by an ape who codes.</p>
         </div>
     </footer>
@@ -398,21 +648,85 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Add some interactive effects
-        document.addEventListener('DOMContentLoaded', function() {
-            // Ape image hover effect
-            const apeImage = document.querySelector('.ape-image');
-            apeImage.addEventListener('mouseenter', function() {
-                this.style.transform = 'scale(1.05) rotate(2deg)';
+        // Scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
             });
-            apeImage.addEventListener('mouseleave', function() {
-                this.style.transform = 'scale(1) rotate(0deg)';
+        }, observerOptions);
+
+        // Observe all reveal elements
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Staggered project card animations
+        const projectCards = document.querySelectorAll('.project-card');
+        const projectObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+
+        projectCards.forEach(card => {
+            projectObserver.observe(card);
+        });
+
+        // Enhanced header background on scroll
+        let lastScrollY = window.scrollY;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > 100) {
+                header.style.background = 'rgba(10, 10, 15, 0.95)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+            } else {
+                header.style.background = 'rgba(10, 10, 15, 0.8)';
+                header.style.boxShadow = 'inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // Add loading animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fade in hero elements with staggered timing
+            const heroElements = ['.hero h1', '.hero .tagline', '.hero .cta-button'];
+            heroElements.forEach((selector, index) => {
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.style.opacity = '0';
+                    element.style.transform = 'translateY(30px)';
+                    setTimeout(() => {
+                        element.style.transition = 'all 0.8s ease-out';
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, index * 200 + 500);
+                }
             });
         });
     </script>
