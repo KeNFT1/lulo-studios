@@ -9,7 +9,7 @@ Lulo Studios is a creative tech studio built around **BAYC #2253 "Lulo"** — an
 
 Behind the ape is [Ken](https://github.com/KeNFT1) — a Colombian-American builder, TEDx speaker, patent holder, World Cup fencer, and healthcare AI product leader.
 
-🌐 **Visit:** [lulo.studio](https://lulo.studio)
+🌐 **Visit: [kenft1.github.io/lulo-studios](https://kenft1.github.io/lulo-studios)
 
 ## Projects
 
@@ -58,7 +58,7 @@ See [BRAND.md](./BRAND.md) for brand guidelines, colors, typography, and usage i
 **Use this badge in your Lulo Studios projects:**
 
 ```markdown
-🦍 **Built by [Lulo Studios](https://lulo.studio)** - *AI × Healthcare × Web3*
+🦍 **Built by [Lulo Studios](https://kenft1.github.io/lulo-studios)** - *AI × Healthcare × Web3*
 ```
 
 ---

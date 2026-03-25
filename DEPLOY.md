@@ -8,7 +8,7 @@ The repository is ready to be pushed to GitHub. Follow these steps:
    - Go to https://github.com/new
    - Repository name: `lulo-studios`
    - Description: `Lulo Studios - Building at the intersection of AI, healthcare, and web3. Creative tech studio built around BAYC #2253.`
-   - Homepage: `https://lulo.studio`
+   - Homepage: `https://kenft1.github.io/lulo-studios`
    - Make it Public
    - Don't initialize with README (we already have one)
 
@@ -29,7 +29,7 @@ After creating the repository:
 4. Site will be available at: https://kenft1.github.io/lulo-studios/
 
 ### Custom Domain Setup
-If you want to use lulo.studio:
+If you want to use a custom domain:
 1. Add CNAME file with your domain
 2. Configure DNS to point to GitHub Pages
 3. Enable HTTPS in repository settings
