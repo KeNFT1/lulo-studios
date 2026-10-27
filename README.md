@@ -9,33 +9,22 @@ Lulo Studios is a creative tech studio built around **BAYC #2253 "Lulo"** — an
 
 Behind the ape is [Ken](https://github.com/KeNFT1) — a Colombian-American builder, TEDx speaker, patent holder, World Cup fencer, and healthcare AI product leader.
 
-🌐 **Visit: [kenft1.github.io/lulo-studios](https://kenft1.github.io/lulo-studios)
+🌐 **Visit: [kenft1.github.io/lulo-studios](https://kenft1.github.io/lulo-studios)**
 
-## Projects
+## Selected work
 
-### 🔍 [Lulo's Eye](https://github.com/KeNFT1)
-Intelligence platform for data analysis and insights
+- **[AI Lambo](https://ailambo.com):** 3D sponsorship marketplace with an agent-readable public catalog
+- **Alameda Candidate Compass:** neutral, source-first 2026 local election research tool
+- **WordSprout:** bilingual vocabulary tracker for young children and their families
+- **SAfG Compass:** local-first nonprofit program, family, relationship, and attendance CRM
+- **Request My EHI:** agent-assisted workflow for complete electronic health information requests
+- **[SnapList](https://t.me/Kaishpinchbot):** photo-to-marketplace-listing Telegram bot
+- **Trading Systems Lab:** paper-only, receipt-driven prediction-market and futures research
+- **[Simian](https://github.com/KeNFT1/Simian):** AI agent identity concept built around verified NFT provenance
+- **Beeple Day #7109 Archive:** source-preserved family and BAYC provenance archive
+- **[MedGemma Viewer](https://github.com/KeNFT1/medgemma-viewer):** local-first medical image AI interface
 
-### 📊 [Lulo's Org Charts](https://github.com/KeNFT1)
-Organizational visualization and management tools
-
-### 🦍 [Simian](https://github.com/KeNFT1/Simian)
-AI trading agents with NFT identity — verified via delegate.cash
-
-### 🎯 [Prediction Markets](https://github.com/KeNFT1/prediction-markets)
-Decentralized prediction and forecasting platform
-
-### 🏥 [MedGemma Viewer](https://github.com/KeNFT1)
-Healthcare AI model visualization and analysis
-
-### 📄 [PDF2ePub](https://github.com/KeNFT1)
-Document conversion and formatting tools
-
-### 🛒 [Vendedor](https://github.com/KeNFT1)
-E-commerce and marketplace solutions
-
-### 📚 [WordSprout](https://github.com/KeNFT1)
-Kids' educational app (with Holly)
+The portfolio distinguishes live products, controlled releases, active builds, research systems, and archives. It does not claim unverified commercial or trading performance.
 
 ## Philosophy
 
